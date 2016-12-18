@@ -6,8 +6,8 @@ import plugins from './config/plugins';
 const entry = process.env.NODE_ENV === 'dev'
   ? ['webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/dev-server',
-    './src/index.js']
-  : ['./src/index.js'];
+    './client/index.js']
+  : ['./client/index.js'];
 
 export default {
   devtool: 'inline-source-map',
@@ -21,7 +21,7 @@ export default {
   },
 
   resolve: {
-    modulesDirectories: ['src', 'node_modules'],
+    modulesDirectories: ['client', 'node_modules'],
   },
 
   devServer: {
@@ -29,6 +29,7 @@ export default {
       contentBase: './public',
       quite: false,
       noInfo: false,
+      title: 'Show case',
       stats: {
         colors: true,
         timings: true,

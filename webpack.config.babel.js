@@ -1,5 +1,6 @@
 import autoprefixer from 'autoprefixer';
 import precss from 'precss';
+import path from 'path';
 import loaders, { eslint } from './config/loaders';
 import plugins from './config/plugins';
 
@@ -21,7 +22,8 @@ export default {
   },
 
   resolve: {
-    modulesDirectories: ['client', 'node_modules'],
+    root: path.resolve('client'),
+    modulesDirectories: ['node_modules', 'client'],
   },
 
   devServer: {

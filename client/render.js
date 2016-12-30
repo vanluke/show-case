@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from 'shared/components/app';
+import { Router, browserHistory } from 'react-router';
+import routes from 'routes';
+// import App from 'shared/components/app';
 
 const hoock = document.getElementById('container');
-render(<App />, hoock);
+render(<Router history={browserHistory}>{routes()}</Router>, hoock);

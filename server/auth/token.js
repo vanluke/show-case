@@ -20,4 +20,5 @@ export function* loginRoute(next) {
 export const jwtConfig = jwt({
   secret: publicKey,
   algorithm: 'RS256',
+  passthrough: false,
 });

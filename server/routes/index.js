@@ -4,7 +4,7 @@ import { getUserDetails } from '../user';
 const routes = new Router();
 
 routes.get('/hello', async function () {
-  this.body = 'hello';
+  this.body = { name: 'hello' };
 });
 
 routes.get('/user/:login', getUserDetails);

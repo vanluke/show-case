@@ -1,13 +1,14 @@
 import autoprefixer from 'autoprefixer';
 import precss from 'precss';
+import path from 'path';
 import loaders, { eslint } from './config/loaders';
 import plugins from './config/plugins';
 
 const entry = process.env.NODE_ENV === 'dev'
   ? ['webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/dev-server',
-    './src/index.js']
-  : ['./src/index.js'];
+    './client/index.js']
+  : ['./client/index.js'];
 
 export default {
   devtool: 'inline-source-map',
@@ -21,7 +22,8 @@ export default {
   },
 
   resolve: {
-    modulesDirectories: ['src', 'node_modules'],
+    root: path.resolve('client'),
+    modulesDirectories: ['node_modules', 'client'],
   },
 
   devServer: {
@@ -29,6 +31,7 @@ export default {
       contentBase: './public',
       quite: false,
       noInfo: false,
+      title: 'Show case',
       stats: {
         colors: true,
         timings: true,

@@ -1,8 +1,7 @@
-import userDetails from './user-details.json';
-
-const getDetails = () => Promise.resolve(userDetails);
+import { getUserInfo } from './service';
 
 export async function get() {
+  const accessToken = this.params.accessToken;
+  this.body = await getUserInfo(accessToken);
   this.status = 201;
-  this.body = await getDetails();
 }

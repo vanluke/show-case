@@ -16,16 +16,16 @@ export default class AuthService {
     return !!token && !isTokenExpired(token);
   }
 
-  static setToken({ token }) {
+  static setToken(token) {
     localStorage.setItem(config.auth.appToken, token);
   }
 
-  authenticate(userId) {
+  authenticate(userId, token) {
     const url = `${this.baseUrl}/${config.auth.routes.login}`;
     return new Promise((resolve, reject) => {
       superagent
       .post(url,
-        JSON.stringify({ userId }))
+        JSON.stringify({ userId, token }))
       .set('Content-Type', 'text/plain')
       .end((error, response) => {
         if (error) {
@@ -36,8 +36,9 @@ export default class AuthService {
     });
   }
 
-  async onAuthenticated(userId) {
-    const token = await this.authenticate(userId);
+  async onAuthenticated(userId, auth0token) {
+    const { token, userInfo } = await this.authenticate(userId, auth0token);
     AuthService.setToken(token);
+    return userInfo;
   }
 }

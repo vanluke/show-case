@@ -31,6 +31,14 @@ const conf = convict({
     default: '0',
     env: 'VERSION',
   },
+  auth0: {
+    domain: {
+      doc: 'auth0 config.',
+      format: String,
+      default: 'undefined',
+      env: 'auth0',
+    },
+  },
   mongoDb: {
     uri: {
       doc: 'mongoDb config.',

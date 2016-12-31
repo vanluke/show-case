@@ -21,20 +21,22 @@ export default class Auth0Service {
 
   async onAuthenticated(authResult) {
     Auth0Service.setToken(authResult.idToken);
-    await this.authService.onAuthenticated(authResult.idTokenPayload.sub);
-    browserHistory.replace(config.routes.home);
+    Auth0Service.setAccessToken(authResult.accessToken);
+    await this.authService.onAuthenticated(authResult.idTokenPayload.sub,
+       authResult.accessToken);
+    browserHistory.push(config.routes.home);
   }
 
   loginToAuth0() {
     this.lock.show();
   }
 
-  logInToApp() {
-
-  }
-
   static getToken() {
     return localStorage.getItem(config.auth.tokenKey);
+  }
+
+  static getAccessToken() {
+    return localStorage.getItem(config.auth.accessTokenKey);
   }
 
   static getSub() {
@@ -50,7 +52,11 @@ export default class Auth0Service {
     localStorage.setItem(config.auth.sub, sub);
   }
 
-  static setToken(idToken) {
-    localStorage.setItem(config.auth.tokenKey, idToken);
+  static setToken(token) {
+    localStorage.setItem(config.auth.tokenKey, token);
+  }
+
+  static setAccessToken(accessToken) {
+    localStorage.setItem(config.auth.accessTokenKey, accessToken);
   }
 }

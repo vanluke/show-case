@@ -4,5 +4,8 @@
     "version": "0",
     "mongoDb": {
         "uri": ""
+    },
+    "auth0": {
+      "domain": "lgonciarz.eu.auth0.com"
     }
 }

@@ -100,6 +100,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "superagent": "^3.3.0",
-    "superagent-jsonpx": "^0.1.0"
+    "superagent-jsonpx": "^0.1.0",
+    "xhr2": "^0.1.3"
   }
 }

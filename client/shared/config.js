@@ -3,6 +3,7 @@ export default {
     clientId: 'G4SjcuDRIAstEVyu6Ksu5rjW4CMgUlse',
     domain: 'lgonciarz.eu.auth0.com',
     tokenKey: '89976&*)k',
+    accessTokenKey: 'af4%',
     appToken: 'a_t*&^',
     type: 'token',
     sub: 'sub',

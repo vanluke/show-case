@@ -1,0 +1,50 @@
+@import '../../../common';
+
+.c-login {
+  position: absolute;
+  color: $login-color;
+  background: url('https://dl.dropboxusercontent.com/s/wv4lcj4kbyqqegt/bmw_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  &__header {
+    position: relative;
+    &--main {
+      font-size: $login-header-fs-main;
+      padding: 1rem;
+      text-align: center;
+    }
+    &--secondary {
+      font-size: $login-header-fs-secondary;
+      position: relative;
+      text-align: center;
+    }
+  }
+  &__section {
+    position: relative;
+    display: inline-block;
+    min-height: 16rem;
+    top: 25%;
+  }
+  &__button {
+    width: 20rem;
+    border: none;
+    margin-top: 1.5rem;
+    font-weight: 300;
+    font-size: 1.6rem;
+    padding: .6rem 0;
+    border-radius: 0;
+    cursor: pointer;
+    box-shadow: 0 0 1.4rem rgba(0, 0, 0, .6);
+    &--primary {
+      background: $login-button-bgprimary;
+      color: $login-button-color-primary;
+      border-bottom: .6rem solid $login-button-bb-primary;
+
+      &:hover {
+        background: $login-button-bgprimary-hover;
+      }
+    }
+  }
+}

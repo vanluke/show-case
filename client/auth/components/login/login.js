@@ -1,19 +1,23 @@
 import React, { PropTypes } from 'react';
-import AuthService from 'auth/service';
+import Auth0Service from 'auth/service/auth0.service';
+import './_login.scss';
 
 const login = auth => () => auth.loginToAuth0();
 
 const Login = ({ auth }) => (
   <div className="c-login">
-    <h2>Login using auth0</h2>
-    <button
-      onClick={login(auth)}
-      className="c-login__button c-login__button--login"
-    >Login</button>
+    <section className="c-login__section">
+      <h1 className="c-login__header c-login__header--main">Welcome to garage</h1>
+      <h2 className="c-login__header c-login__header--secondary">Login using auth0</h2>
+      <button
+        onClick={login(auth)}
+        className="c-login__button c-login__button--primary"
+      >Login</button>
+    </section>
   </div>);
 
 Login.propTypes = {
-  auth: PropTypes.instanceOf(AuthService),
+  auth: PropTypes.instanceOf(Auth0Service),
 };
 
 export default Login;

@@ -1,0 +1,16 @@
+$login-button-bgprimary: #2dbc05;
+$login-button-color-primary: #fff;
+$login-button-bb-primary: #2cb200;
+$login-button-bgprimary-hover: #38db06;
+$login-color: #fff;
+$login-header-fs-main: 190%;
+$login-header-fs-secondary: 140%;
+
+@keyframes hop {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -2rem);
+  }
+}

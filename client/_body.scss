@@ -1,7 +1,9 @@
+@import "reset";
 @import "fonts";
 @import "layout";
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: medium;
+  width: 100%;
 }

@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import './_app.scss';
 
 const App = props => (<main className="c-app">
-  Welcome
   {React.cloneElement(props.children, {
     auth: props.route.auth,
   })}

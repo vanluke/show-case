@@ -1,0 +1,27 @@
+$base-color:    #4b4e53;
+$white:		      #FFFFFF;
+$color-blue:		#18779C;
+$color-accent:	#D83D59;
+
+.c-home {
+  &__header {
+    &--inline {
+      display: inline;
+    }
+    &--main {
+      font-size: 1.5rem;
+      padding-top: 2rem;
+      color: $base-color;
+
+      &:hover {
+        color: $base-color;
+      }
+
+      h2 {
+        transition: .5s;
+        font-size: 32px;
+        font-weight: 500;
+      }
+    }
+  }
+}

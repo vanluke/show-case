@@ -31,6 +31,11 @@ export default class Auth0Service {
     this.lock.show();
   }
 
+  static logout() {
+    localStorage.removeItem(config.auth.tokenKey);
+    localStorage.removeItem(config.auth.accessTokenKey);
+  }
+
   static getToken() {
     return localStorage.getItem(config.auth.tokenKey);
   }

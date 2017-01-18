@@ -1,0 +1,17 @@
+@import 'counter.variables';
+@import 'counter.keyframes';
+
+.c-counter {
+  &__header {
+    text-align: center;
+    &--h2 {
+      font-size: 90%;
+      color: $header-color-main;
+    }
+    &--h3 {
+      font-size: 60%;
+      animation: colorchange 5s infinite;
+      color: $header-color-main;
+    }
+  }
+}

@@ -1,10 +1,12 @@
 export default {
   auth: {
+    logoutTime: 5,
+    logoutTimeInterval: 1000,
     clientId: 'G4SjcuDRIAstEVyu6Ksu5rjW4CMgUlse',
     domain: 'lgonciarz.eu.auth0.com',
     tokenKey: '89976&*)k',
     accessTokenKey: 'af4%',
-    appToken: 'a_t*&^',
+    appToken: 'a_t^',
     type: 'token',
     sub: 'sub',
     redirectUrl: 'http://localhost:3000/login',

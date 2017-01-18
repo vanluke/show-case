@@ -1,0 +1,31 @@
+@import 'logout.variables';
+
+.c-logout {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: $logout-bg;
+
+  &__header {
+    &--main {
+      font-size: 170%;
+      color: $logout-header-color-main;
+    }
+  }
+
+  &__section {
+    @media (min-width: 40em) {
+      width: 50%;
+      height: 100vh;
+      overflow: hidden;
+      top: 50%;
+      float: left;
+    }
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+  }
+}

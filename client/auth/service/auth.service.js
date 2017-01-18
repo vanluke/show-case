@@ -20,6 +20,10 @@ export default class AuthService {
     localStorage.setItem(config.auth.appToken, token);
   }
 
+  static logout() {
+    localStorage.removeItem(config.auth.appToken);
+  }
+
   authenticate(userId, token) {
     const url = `${this.baseUrl}/${config.auth.routes.login}`;
     return new Promise((resolve, reject) => {

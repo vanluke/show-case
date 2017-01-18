@@ -19,9 +19,10 @@ export default class UserPanel extends Component {
   }
 
   render() {
-    const { user } = this.state;
+    // const { user } = this.state;
     return (<div>
-      <header>
+      This is dashboard
+      {/* <header>
         <h1>Welcome {user.nickname}</h1>
       </header>
       <picture>
@@ -33,7 +34,7 @@ export default class UserPanel extends Component {
         <li>Email: {user.email}</li>
         <li>Is verified: {!!user.email_verified}</li>
         <li>Created at: {user.created_at}</li>
-      </ul>
+      </ul> */}
     </div>);
   }
 }

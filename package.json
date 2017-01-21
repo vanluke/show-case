@@ -55,7 +55,7 @@
     "eslint-plugin-promise": "^3.3.2",
     "eslint-plugin-react": "^6.7.1",
     "eslint-plugin-standard": "^2.0.1",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.24.1",
     "image-webpack-loader": "^3.1.0",
@@ -75,7 +75,7 @@
     "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.14",
+    "webpack": "^2.2.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.10.0"

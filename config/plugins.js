@@ -3,6 +3,8 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import autoprefixer from 'autoprefixer';
+import precss from 'precss';
 
 export default [
   new HtmlWebpackPlugin({
@@ -19,7 +21,18 @@ export default [
   }),
   new webpack.optimize.UglifyJsPlugin({
     include: /\.min\.js$/,
-    minimize: true,
+    sourceMap: true,
   }),
-  new ExtractTextPlugin('bundle.css'),
+  new webpack.LoaderOptionsPlugin({
+    minimize: true,
+    options: {
+      context: __dirname,
+      postcss: [precss, autoprefixer],
+    },
+  }),
+  new ExtractTextPlugin({
+    filename: 'bundle.css',
+    disable: false,
+    allChunks: true,
+  }),
 ];

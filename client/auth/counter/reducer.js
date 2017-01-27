@@ -2,7 +2,7 @@ import {
   C_COUNTER_START,
   C_COUNTER_STOP,
   C_COUNTER_UPDATE,
-} from 'auth/components/counter/consts';
+} from 'auth/counter/consts';
 
 const initState = {
   counter: 0,
@@ -15,6 +15,9 @@ export default function counterReducer(state = initState, action = {}) {
       return {
         ...state,
         type: C_COUNTER_START,
+        counterFinished: action.payload.counterFinished,
+        time: action.payload.time,
+        timeInterval: action.payload.timeInterval,
       };
     case C_COUNTER_STOP:
       return {

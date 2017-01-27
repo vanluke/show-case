@@ -1,5 +1,5 @@
 import path from 'path';
-import loaders, { eslint } from './config/loaders';
+import loaders from './config/loaders';
 import plugins from './config/plugins';
 
 const entry = process.env.NODE_ENV === 'dev'

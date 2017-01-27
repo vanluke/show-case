@@ -1,5 +1,5 @@
 import React, { PureComponent, PropTypes } from 'react';
-import { Counter } from 'auth/components/counter';
+import { Counter } from 'auth/counter';
 import config from 'shared/config';
 import Auth0Service from 'auth/service/auth0.service';
 import AuthService from 'auth/service/auth.service';

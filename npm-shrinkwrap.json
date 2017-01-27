@@ -6669,6 +6669,12 @@
       "resolved": "https://registry.npmjs.org/redux-logger/-/redux-logger-2.7.4.tgz",
       "dev": true
     },
+    "redux-saga": {
+      "version": "0.14.3",
+      "from": "redux-saga@latest",
+      "resolved": "https://registry.npmjs.org/redux-saga/-/redux-saga-0.14.3.tgz",
+      "dev": true
+    },
     "redux-thunk": {
       "version": "2.1.0",
       "from": "redux-thunk@>=2.1.0 <3.0.0",

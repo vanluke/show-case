@@ -1,9 +1,10 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
   cCounterStart,
   cCounterStop,
-} from 'auth/components/counter/action-creators.js';
+} from 'auth/counter/epic';
 import './_counter.scss';
 
 class Counter extends PureComponent {
@@ -25,11 +26,11 @@ class Counter extends PureComponent {
   }
 
   componentDidMount() {
-    const { dispatch, timeInterval, time, actionAfter } = this.props;
+    const { dispatch, time, timeInterval, actionAfter } = this.props;
     dispatch(cCounterStart({
-      actionAfter,
-      time,
+      counterFinished: actionAfter,
       timeInterval,
+      time,
     }));
   }
 

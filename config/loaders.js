@@ -111,6 +111,6 @@ export const woffLoader = makeFileLoader('woff');
 export const ttfLoader = makeFileLoader('ttf');
 export const jpgLoader = makeFileLoader('jpg');
 
-export default [js, json, sass,
+export default [eslint, js, json, sass,
   svgLoader, eotLoader, woffLoader,
   ttfLoader, jpgLoader];

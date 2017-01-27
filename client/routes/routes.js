@@ -5,8 +5,8 @@ import App from 'shared/components/app';
 import Home from 'home/components/home';
 import Dashboard from 'dashboard/components/user-panel';
 import Spends from 'spends/components/spends';
-import Login from 'auth/components/login/login';
-import Logout from 'auth/components/logout/logout';
+import Login from 'auth/login/login';
+import Logout from 'auth/logout/logout';
 import config from 'shared/config';
 
 const auth = new Auth0Service(config.auth.clientId,

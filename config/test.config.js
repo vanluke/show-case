@@ -15,4 +15,4 @@ Object.keys(window).forEach((key) => {
   }
 });
 
-require('app-module-path').addPath('src');
+require('app-module-path').addPath('client');

@@ -1,4 +1,4 @@
 import { combineEpics } from 'redux-observable';
-import { cCounterEpic } from 'auth/components/counter/epic';
+import { cCounterEpic } from 'auth/counter/epic';
 
 export default combineEpics(cCounterEpic);

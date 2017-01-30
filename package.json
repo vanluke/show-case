@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "stats": "webpack --env stats --profile --json > stats.json",
-    "start": "npm run start:client | npm run start:server",
+    "start": "npm run start:client && npm run start:server",
     "start:server": "node_modules/.bin/nodemon",
     "start:server2": "node --inspect ./index.js",
     "start:client": "node_modules/.bin/webpack-dev-server --port=3000 --inline --progress --history-api-fallback --open --colors",

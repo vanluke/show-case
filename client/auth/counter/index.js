@@ -1,4 +1,4 @@
 import counterReducer from 'auth/counter/reducer';
-import Counter from 'auth/counter/counter';
+import CounterContainer from 'auth/counter/counter-countainer';
 
-export { counterReducer, Counter };
+export { counterReducer, CounterContainer };

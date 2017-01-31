@@ -1,12 +1,13 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
   cCounterStart,
   cCounterStop,
-} from 'auth/components/counter/action-creators.js';
-import './_counter.scss';
+} from 'auth/counter/epic';
+import Counter from 'auth/counter/counter';
 
-class Counter extends PureComponent {
+export class CounterContainer extends PureComponent {
   static propTypes = {
     counter: PropTypes.oneOfType([
       PropTypes.string,
@@ -25,11 +26,11 @@ class Counter extends PureComponent {
   }
 
   componentDidMount() {
-    const { dispatch, timeInterval, time, actionAfter } = this.props;
+    const { dispatch, time, timeInterval, actionAfter } = this.props;
     dispatch(cCounterStart({
-      actionAfter,
-      time,
+      counterFinished: actionAfter,
       timeInterval,
+      time,
     }));
   }
 
@@ -39,17 +40,12 @@ class Counter extends PureComponent {
   }
 
   render() {
-    const { counter, text, suffix } = this.props;
-    return (<div className="c-counter">
-      <header className="c-counter__header">
-        <h2 className="c-counter__header c-counter__header--h2">
-          {text}
-        </h2>
-        <h3 className="c-counter__header c-counter__header--h3">
-          {`${counter}${suffix}`}
-        </h3>
-      </header>
-    </div>);
+    const { text, counter, suffix = '' } = this.props;
+    return (<Counter
+      text={text}
+      suffix={suffix}
+      counter={counter}
+    />);
   }
 }
 
@@ -57,10 +53,6 @@ export default connect((state, props) => {
   const { counterReducer } = state;
   return {
     ...counterReducer,
-    text: props.text,
-    timeInterval: props.timeInterval || 0,
-    time: props.time || 0,
-    actionAfter: props.actionAfter,
-    suffix: props.suffix || '',
+    ...props,
   };
-})(Counter);
+})(CounterContainer);

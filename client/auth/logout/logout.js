@@ -1,5 +1,5 @@
 import React, { PureComponent, PropTypes } from 'react';
-import { Counter } from 'auth/components/counter';
+import { CounterContainer } from 'auth/counter';
 import config from 'shared/config';
 import Auth0Service from 'auth/service/auth0.service';
 import AuthService from 'auth/service/auth.service';
@@ -29,8 +29,9 @@ class Logout extends PureComponent {
         <h1 className="c-logout__header c-logout__header--main">You are logged out</h1>
       </section>
       <section className="c-logout__section">
-        <Counter
+        <CounterContainer
           text="You will be redirected in"
+          suffix="s"
           actionAfter={this.logout}
           time={config.auth.logoutTime}
           timeInterval={config.auth.logoutTimeInterval}

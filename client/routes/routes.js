@@ -1,16 +1,27 @@
 import React from 'react';
 import { Route, IndexRedirect } from 'react-router';
 import Auth0Service from 'auth/service';
+import Auth0Lock from 'auth0-lock';
 import App from 'shared/components/app';
 import Home from 'home/components/home';
 import Dashboard from 'dashboard/components/user-panel';
 import Spends from 'spends/components/spends';
-import Login from 'auth/components/login/login';
-import Logout from 'auth/components/logout/logout';
+import Login from 'auth/login/login';
+import Logout from 'auth/logout/logout';
 import config from 'shared/config';
+import AuthService from 'auth/service/auth.service';
 
-const auth = new Auth0Service(config.auth.clientId,
-  config.auth.domain);
+const authService = new AuthService(config.server.baseUrl);
+
+const lock = new Auth0Lock(config.auth.clientId,
+  config.auth.domain, {
+    auth: {
+      redirectUrl: config.auth.redirectUrl,
+      responseType: config.auth.type,
+    },
+  });
+
+const auth = new Auth0Service(lock, authService);
 
 const requireAuth = (nextState, replace) => {
   if (!Auth0Service.loggedIn()) {

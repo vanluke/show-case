@@ -16,6 +16,7 @@ export default function counterReducer(state = initState, action = {}) {
         ...state,
         counterFinished: action.payload.counterFinished,
         time: action.payload.time,
+        counter: action.payload.time,
         timeInterval: action.payload.timeInterval,
       };
     case C_COUNTER_STOP:
@@ -25,7 +26,7 @@ export default function counterReducer(state = initState, action = {}) {
     case C_COUNTER_UPDATE:
       return {
         ...state,
-        counter: state.counter + 1,
+        counter: state.counter - 1,
       };
     default:
       return state;

@@ -1,20 +1,12 @@
-import Auth0Lock from 'auth0-lock';
 import jwtDecode from 'jwt-decode';
 import { browserHistory } from 'react-router';
-import AuthService from 'auth/service/auth.service';
 import config from 'shared/config';
 import { isTokenExpired } from 'auth/service/auth.utils';
 
 export default class Auth0Service {
-  constructor(clinetId, domain) {
-    this.authService = new AuthService(config.server.baseUrl);
-    this.lock = new Auth0Lock(clinetId, domain, {
-      auth: {
-        redirectUrl: config.auth.redirectUrl,
-        responseType: config.auth.type,
-      },
-    });
-
+  constructor(lock, authService) {
+    this.lock = lock;
+    this.authService = authService;
     this.lock.on('authenticated', this.onAuthenticated.bind(this));
     this.loginToAuth0 = this.loginToAuth0.bind(this);
   }

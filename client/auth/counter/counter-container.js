@@ -40,7 +40,7 @@ export class CounterContainer extends PureComponent {
   }
 
   render() {
-    const { text, counter, suffix } = this.props;
+    const { text, counter, suffix = '' } = this.props;
     return (<Counter
       text={text}
       suffix={suffix}

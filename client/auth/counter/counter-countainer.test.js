@@ -46,7 +46,7 @@ describe('Counter', () => {
           .eql({
             counter: 0,
             text,
-            suffix: undefined,
+            suffix: '',
           });
       });
     });

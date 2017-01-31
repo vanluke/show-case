@@ -20,8 +20,7 @@ describe('Auth', () => {
 
   beforeEach(() => {
     store = mockStore({
-      counterReducer: {
-      }
+      counterReducer: {},
     });
   });
 
@@ -38,16 +37,6 @@ describe('Auth', () => {
         };
         it('should run counter', () => {
           store.dispatch(cCounterStart(counterProps));
-          const actions = store.getActions();
-          const expectedActions = [{
-              type: C_COUNTER_START,
-              payload: {
-                counterFinished: () => {},
-                time: 1,
-                timeInterval: 1000,
-              },
-            },
-          ];
           expect(store.getActions())
             .to
             .have

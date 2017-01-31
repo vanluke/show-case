@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
 import Auth0Service from 'auth/service/auth0.service';
+import { login } from 'auth/login/actions';
 import './_login.scss';
-
-const login = auth => () => auth.loginToAuth0();
 
 const Login = ({ auth }) => (
   <div className="c-login">

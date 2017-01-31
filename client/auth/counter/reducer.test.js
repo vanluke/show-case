@@ -30,7 +30,7 @@ describe('Counter', () => {
         .to
         .be
         .eql({
-          counter: counter + 1,
+          counter: counter - 1,
           text,
         });
     });
@@ -61,7 +61,7 @@ describe('Counter', () => {
         .to
         .be
         .eql({
-          counter: 0,
+          counter: 5,
           text: '',
           counterFinished,
           time,

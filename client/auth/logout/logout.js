@@ -31,6 +31,7 @@ class Logout extends PureComponent {
       <section className="c-logout__section">
         <CounterContainer
           text="You will be redirected in"
+          suffix="s"
           actionAfter={this.logout}
           time={config.auth.logoutTime}
           timeInterval={config.auth.logoutTimeInterval}
